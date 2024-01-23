@@ -13,6 +13,7 @@ vim.g.maplocalleader = ' '
 -- Disable unneeded providers
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
+vim.g.python3_host_prog = "/usr/bin/python"
 
 -- Disable diagnostic virtual text
 vim.diagnostic.config({
@@ -155,16 +156,10 @@ require('lazy').setup({
   },
   {
     -- Theme
-    'rose-pine/neovim',
+    'RRethy/nvim-base16',
     priority = 1000,
     config = function()
-      require("rose-pine").setup({
-        styles = {
-          transparency = true
-        }
-      })
-
-      vim.cmd.colorscheme 'rose-pine'
+      vim.cmd.colorscheme 'base16-classic-dark'
     end,
   },
 
@@ -175,7 +170,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'rose-pine',
+        theme = 'auto',
         component_separators = '|',
         section_separators = '',
       },
