@@ -13,7 +13,7 @@ vim.g.maplocalleader = ' '
 -- Disable unneeded providers
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
-vim.g.python3_host_prog = "/usr/bin/python"
+vim.g.python3_host_prog = "/usr/bin/python3"
 
 -- Disable diagnostic virtual text
 vim.diagnostic.config({
@@ -65,10 +65,6 @@ require('lazy').setup({
     -- Autocompletion
     'hrsh7th/nvim-cmp',
     dependencies = {
-      -- Snippet Engine & its associated nvim-cmp source
-      'L3MON4D3/LuaSnip',
-      'saadparwaiz1/cmp_luasnip',
-
       -- Adds LSP completion capabilities
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
@@ -76,6 +72,17 @@ require('lazy').setup({
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
     },
+  },
+
+  {
+    "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- install jsregexp (optional!).
+    build = "make install_jsregexp",
+    dependencies = {
+      'saadparwaiz1/cmp_luasnip'
+    }
   },
 
   -- Useful plugin to show you pending keybinds.
