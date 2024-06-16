@@ -1,7 +1,7 @@
 local set = vim.keymap.set
 local k = vim.keycode
 
-set('n', '<leader><F5>', vim.cmd.UndotreeToggle, { silent = true, desc = 'Open Undotree' })
+set('n', '<space><F5>', vim.cmd.UndotreeToggle, { silent = true, desc = 'Open Undotree' })
 
 -- Basic movement keybinds, these make navigating splits easy for me
 set('n', '<c-j>', '<c-w><c-j>')
@@ -24,6 +24,8 @@ end, { expr = true })
 -- the float when I navigate to the error - so I override them.
 set('n', ']d', vim.diagnostic.goto_next)
 set('n', '[d', vim.diagnostic.goto_prev)
+
+set('n', '<space>e', vim.diagnostic.open_float)
 
 set('n', '<M-j>', function()
   if vim.opt.diff:get() then
