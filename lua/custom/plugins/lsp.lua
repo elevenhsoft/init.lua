@@ -103,25 +103,6 @@ return {
           -- TODO: Check if i still need the filtypes stuff i had before
         },
 
-        elixirls = {
-          cmd = { '/home/tjdevries/.local/share/nvim/mason/bin/elixir-ls' },
-          root_dir = require('lspconfig.util').root_pattern { 'mix.exs' },
-          server_capabilities = {
-            -- completionProvider = true,
-            -- definitionProvider = false,
-            documentFormattingProvider = false,
-          },
-        },
-
-        lexical = {
-          cmd = { '/home/tjdevries/.local/share/nvim/mason/bin/lexical', 'server' },
-          root_dir = require('lspconfig.util').root_pattern { 'mix.exs' },
-          server_capabilities = {
-            completionProvider = vim.NIL,
-            definitionProvider = false,
-          },
-        },
-
         clangd = {
           -- TODO: Could include cmd, but not sure those were all relevant flags.
           --    looks like something i would have added while i was floundering
@@ -143,7 +124,6 @@ return {
       local ensure_installed = {
         'stylua',
         'lua_ls',
-        'delve',
         -- "tailwind-language-server",
       }
 
