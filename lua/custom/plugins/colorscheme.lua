@@ -1,10 +1,14 @@
 return {
   {
-    'RRethy/base16-nvim',
+    'navarasu/onedark.nvim',
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'base16-default-dark'
+      require('onedark').setup {
+        style = 'cool',
+      }
+
+      vim.cmd.colorscheme 'onedark'
     end,
   },
 }
