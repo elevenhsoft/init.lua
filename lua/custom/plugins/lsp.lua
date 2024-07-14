@@ -190,6 +190,8 @@ return {
       require('conform').setup {
         formatters_by_ft = {
           lua = { 'stylua' },
+          html = { { 'prettierd', 'prettier' } },
+          javascript = { { 'prettierd', 'prettier' } },
         },
       }
 
