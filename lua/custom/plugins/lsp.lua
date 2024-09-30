@@ -58,7 +58,7 @@ return {
         cssls = true,
 
         -- Probably want to disable formatting for this lang server
-        tsserver = {
+        ts_ls = {
           server_capabilities = {
             documentFormattingProvider = false,
           },
