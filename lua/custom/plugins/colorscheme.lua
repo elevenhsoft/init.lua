@@ -1,10 +1,10 @@
 return {
   {
-    'blazkowolf/gruber-darker.nvim',
+    'rose-pine/neovim',
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'gruber-darker'
+      vim.cmd.colorscheme 'rose-pine-moon'
     end,
   },
 }
