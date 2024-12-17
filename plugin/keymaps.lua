@@ -25,7 +25,7 @@ end, { expr = true })
 set('n', ']d', vim.diagnostic.goto_next)
 set('n', '[d', vim.diagnostic.goto_prev)
 
-set('n', '<space>e', vim.diagnostic.open_float)
+set('n', '<space>e', vim.diagnostic.open_float, { desc = 'Open Diagnostics' })
 
 set('n', '<M-j>', function()
   if vim.opt.diff:get() then
@@ -45,4 +45,4 @@ end)
 
 set('n', '<space>tt', function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = 0 }, { bufnr = 0 })
-end)
+end, { desc = 'Toggle Inlay Hints' })

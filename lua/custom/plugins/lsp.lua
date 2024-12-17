@@ -159,14 +159,14 @@ return {
           local builtin = require 'telescope.builtin'
 
           vim.opt_local.omnifunc = 'v:lua.vim.lsp.omnifunc'
-          vim.keymap.set('n', 'gd', builtin.lsp_definitions, { buffer = 0 })
-          vim.keymap.set('n', 'gr', builtin.lsp_references, { buffer = 0 })
-          vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { buffer = 0 })
-          vim.keymap.set('n', 'gT', vim.lsp.buf.type_definition, { buffer = 0 })
-          vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = 0 })
+          vim.keymap.set('n', 'gd', builtin.lsp_definitions, { buffer = 0, desc = 'Go to Definition' })
+          vim.keymap.set('n', 'gr', builtin.lsp_references, { buffer = 0, desc = 'Go to References' })
+          vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { buffer = 0, desc = 'Go to Declaration' })
+          vim.keymap.set('n', 'gT', vim.lsp.buf.type_definition, { buffer = 0, desc = 'Go to Type Definition' })
+          vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = 0, desc = 'Lsp Tooltip' })
 
-          vim.keymap.set('n', '<space>cr', vim.lsp.buf.rename, { buffer = 0 })
-          vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, { buffer = 0 })
+          vim.keymap.set('n', '<space>cr', vim.lsp.buf.rename, { buffer = 0, desc = 'Rename' })
+          vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, { buffer = 0, desc = 'Code Action' })
 
           local filetype = vim.bo[bufnr].filetype
           if disable_semantic_tokens[filetype] then
@@ -191,8 +191,8 @@ return {
       require('conform').setup {
         formatters_by_ft = {
           lua = { 'stylua' },
-          html = { { 'prettierd', 'prettier' } },
-          javascript = { { 'prettierd', 'prettier' } },
+          html = { 'prettierd', 'prettier' },
+          javascript = { 'prettierd', 'prettier' },
         },
       }
 
